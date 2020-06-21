@@ -1,0 +1,125 @@
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/homebootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/homestyle.css" />
+
+
+
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="css/nav.css" rel="stylesheet"> -->
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+<%- include("partials/header") -%>
+<body style="background-image: url('images/background.jpg');background-size: cover;height: 100%;overflow: hidden;">
+
+	<div id="booking" class="section">
+		<div class="section-center" >
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="booking-cta">
+							<h1>Book your flight today</h1>
+							<p>Tickets at your Doorstep</p>
+						</div>
+					</div>
+					<div class="col-md-7 col-md-offset-1">
+						<div class="booking-form">
+							<form  action="/flights" method = "post">
+								<div class="form-group">
+									<div class="form-checkbox">
+										<label for="roundtrip">
+											<input type="radio" id="roundtrip" name="flight-type" checked>
+											<span></span>Roundtrip
+										</label>
+										<label for="one-way">
+											<input type="radio" id="one-way" name="flight-type" value="oneway" >
+											<span></span>One way
+										</label>
+										<label for="multi-city">
+											<input type="radio" id="multi-city" name="flight-type">
+											<span></span>Multi-City
+										</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Flying from</span>
+											<input class="form-control" type="text" name="from" placeholder="City or airport">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Flying to</span>
+											<input class="form-control" type="text" name="to"placeholder="City or airport">
+
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Departing</span>
+											<input name="fromDate" class="form-control" type="date" required>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Returning</span>
+											<input name = "toDate" class="form-control" type="date" required>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4" ">
+										<div class="form-group">
+											<span class="form-label" >Adults (18+)</span>
+											<input name="adults" class="form-control" type="text" placeholder="1,2,3...">
+
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Children (0-17)</span>
+											<input name="children" class="form-control" type="text" placeholder="0,1,2..">
+
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Travel class</span>
+											<input name="class" class="form-control" type="text" placeholder="Business | Eco">
+
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-btn">
+									<button type="submit" class="submit-btn">Show flights</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<a href="/logout" role="button">Logout</a>

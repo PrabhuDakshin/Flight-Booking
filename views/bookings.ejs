@@ -1,0 +1,41 @@
+<%- include("partials/header") -%>
+<div class="" style="width: 65%; margin:auto">
+  <h2><%= msg %></h2>
+  <table class="table ">
+  <thead class="thead-dark" >
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Flight Name</th>
+        <th scope="col">Departure</th>
+        <th scope="col">Arrival</th>
+        <th scope="col">Departure Date</th>
+        <th scope="col">Arrival Date</th>
+        <th scope="col">Adults</th>
+        <th scope="col">Children</th>
+        <th scope="col">Seats</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <form class="" action="/cancel" method="post">
+        <% var i = 1 %>
+        <% data.forEach(function(x){ %>
+        <tr>
+          <td> <%= i++ %> </td>
+          <td name="fname"> <%= x.flightName %> </td>
+          <td> <%= x.from %> </td>
+          <td> <%= x.to %> </td>
+          <td> <%= x.fromDate %> </td>
+          <td> <%= x.toDate %> </td>
+          <td> <%= x.adults %> </td>
+          <td> <%= x.children %> </td>
+          <td> <%= x.seats %> </td>
+          <td> <%= x.price %> </td>
+          <td><button type="submit" name="id" value="<%= x._id %>" class="btn btn-danger">Cancel</button></td>
+        </tr>
+        <% }); %>
+      </form>
+  </tbody>
+</table>
+</div>
+<%- include("partials/footer") -%>

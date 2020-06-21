@@ -1,0 +1,74 @@
+<%- include("partials/header") -%>
+<div class="" style="width: 900px; margin:auto">
+  <h1>Available Flights</h1><br>
+  <table class="table ">
+  <thead class="thead-dark" >
+    <% if(bookCheck === 1){ %>
+
+<form class="" action="/bookings" method="post">
+
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Flight Name</th>
+        <th scope="col">Departure</th>
+        <th scope="col">Arival</th>
+        <th scope="col">Price</th>
+        <th scope="col">Seats</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% var i = 1 %>
+      <% data.forEach(function(x){ %>
+      <tr>
+        <td> <%= i++ %> </td>
+        <td name="fname"> <%= x.fName %> </td>
+        <td> <%= x.dep %> </td>
+        <td> <%= x.arr %> </td>
+        <td> <%= x.price %> </td>
+        <td> <%= x.seats %> </td>
+        <input type="hidden" name="from" value="<%= bookingDetails.from %>">
+        <input type="hidden" name="to" value="<%= bookingDetails.to %>">
+        <input type="hidden" name="fromDate" value="<%= bookingDetails.fromDate %>">
+        <input type="hidden" name="toDate" value="<%= bookingDetails.toDate %>">
+        <input type="hidden" name="adults" value="<%= bookingDetails.adults %>">
+        <input type="hidden" name="children" value="<%= bookingDetails.children %>">
+        <input type="hidden" name="price" value="<%= x.price %>">
+        <input type="hidden" name="seats" value="<%= parseInt(bookingDetails.adults) + parseInt(bookingDetails.children) %>">
+
+
+        <td><button type="submit" name="flightName" value="<%= x.fName %>" class="btn btn-danger">Book</button></td>
+      </tr>
+      <% }); %>
+
+</form>
+
+    <% } else { %>
+
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Flight Name</th>
+          <th scope="col">Departure</th>
+          <th scope="col">Arival</th>
+          <th scope="col">Price</th>
+          <th scope="col">Seats</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% var i = 1 %>
+        <% data.forEach(function(x){ %>
+        <tr>
+          <td> <%= i++ %> </td>
+          <td> <%= x.fName %> </td>
+          <td> <%= x.dep %> </td>
+          <td> <%= x.arr %> </td>
+          <td> <%= x.price %> </td>
+          <td> <%= x.seats %> </td>
+        </tr>
+
+
+      <% }); } %>
+  </tbody>
+</table>
+</div>
+<%- include("partials/footer") -%>
