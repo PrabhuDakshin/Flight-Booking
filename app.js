@@ -166,6 +166,8 @@ console.log("hell");
       else{
         console.log("Succes");
         passport.authenticate("local")(req, res, function(){
+          res.locals.title = "Home | Flight Booking";
+          
           res.render("home");
         });
       }
