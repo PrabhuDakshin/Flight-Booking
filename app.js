@@ -90,8 +90,8 @@ passport.deserializeUser(function(user, done) {
 
 
 passport.use(new GoogleStrategy({
-    clientId: get CLIENT_ID,
-    clientSecret: get CLIENT_SECRET,
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
     callbackURL: "https://rocky-mesa-53228.herokuapp.com/auth/google/home"
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -102,8 +102,8 @@ passport.use(new GoogleStrategy({
 ));
 
 passport.use(new FacebookStrategy({
-    clientId: get FACEBOOK_APP_ID,
-    clientSecret: get FACEBOOK_APP_SECRET,
+    clientID: process.env.FACEBOOK_APP_ID,
+    clientSecret: process.env.FACEBOOK_APP_SECRET,
     callbackURL: "https://rocky-mesa-53228.herokuapp.com/auth/facebook/home"
   },
   function(accessToken, refreshToken, profile, cb) {
